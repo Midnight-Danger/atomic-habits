@@ -1,0 +1,71 @@
+[versions]
+###### Plugin Versions ######
+kotlin = "1.9.21" #Kotlin version
+android-gradle = "8.2.2" #Gradle plugin version
+ksp = "1.9.21-1.0.16" #Kotlin Symbol Processor
+
+###### Library Versions ######
+compose-compiler = "1.5.7"
+core-ktx = "1.12.0" #android core
+desugar = "2.0.4"
+lifecycle-runtime-ktx = "2.7.0" #android lifecycle
+compose-bom = "2024.02.01"
+compose-activity = "1.8.2"
+
+leak-canary = "2.13"
+timber = "5.0.1"
+
+junit = "4.13.2"
+androidTest-junit = "1.1.5"
+androidTest-espresso = "3.5.1"
+
+[plugins]
+application = { id = "com.android.application", version.ref = "android-gradle" }
+library = { id = "com.android.library" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+
+[libraries]
+desugar = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar" }
+kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "android-gradle" }
+
+android-core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
+android-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
+## compose
+compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose-bom" }
+compose-ui = { module = "androidx.compose.ui:ui" }
+compose-ui-graphics = { module = "androidx.compose.ui:ui-graphics" }
+compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
+compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
+compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
+compose-material3 = { module = "androidx.compose.material3:material3" }
+compose-activity = { module = "androidx.activity:activity-compose", version.ref = "compose-activity" }
+## tooling
+leak-canary = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "leak-canary" }
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+## tests
+junit = { module = "junit:junit", version.ref = "junit" }
+android-test-junit = { module = "androidx.test.ext:junit", version.ref = "androidTest-junit" }
+android-test-espresso = { module = "androidx.test.espresso:espresso-core", version.ref = "androidTest-espresso" }
+compose-ui-test = { module = "androidx.compose.ui:ui-test-junit4" }
+
+[bundles]
+compose = [
+    "compose-ui",
+    "compose-ui-graphics",
+    "compose-activity",
+    "compose-material3"
+]
+# with debugImplementation
+compose-tooling = [
+    "compose-ui-tooling",
+    "compose-ui-tooling-preview",
+    "compose-ui-test-manifest"
+]
+# with androidTestImplementation
+androidTests = [
+    "android-test-junit",
+    "android-test-espresso",
+    "compose-ui-test"
+]
