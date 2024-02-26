@@ -1,10 +1,10 @@
 plugins {
-    id("core-application")
+    id(Plugins.Convention.Application)
     alias(libs.plugins.ksp)
-    id("compose")
-    id("dagger-hilt")
-    id("unit-tests")
-    id("logger")
+    id(Plugins.Convention.Compose)
+    id(Plugins.Convention.DaggerHilt)
+    id(Plugins.Convention.UnitTests)
+    id(Plugins.Convention.Logger)
 }
 
 android {

@@ -1,5 +1,6 @@
 package plugins
 
+import constants.Plugins
 import extensions.implementation
 import extensions.ksp
 import extensions.vcBundle
@@ -13,7 +14,7 @@ class DependencyInjectionConventionPlugin : Plugin<Project> {
     override fun apply(project: Project) {
         with (project) {
             with(pluginManager) {
-                apply("com.google.dagger.hilt.android")
+                apply(Plugins.DaggerHiltPlugin)
             }
 
             dependencies {
