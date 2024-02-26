@@ -26,7 +26,7 @@ gradlePlugin {
             implementationClass = "plugins.LibraryConventionPlugin"
         }
         register("daggerHilt") {
-            id = "dagger"
+            id = "dagger-hilt"
             implementationClass = "plugins.DependencyInjectionConventionPlugin"
         }
         register("composeCore"){

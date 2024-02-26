@@ -2,7 +2,7 @@ plugins {
     id("core-application")
     alias(libs.plugins.ksp)
     id("compose")
-    id("dagger")
+    id("dagger-hilt")
     id("unit-tests")
     id("logger")
 }
