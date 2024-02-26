@@ -1,4 +1,4 @@
-package com.midnight.danger.atomichabits
+package com.midnight.danger.atomichabits.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,9 +10,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.midnight.danger.atomichabits.ui.theme.AtomicHabitsTheme
+import com.midnight.danger.atomichabits.presentation.theme.AtomicHabitsTheme
+import dagger.hilt.android.AndroidEntryPoint
 
-class MainActivity : ComponentActivity() {
+@AndroidEntryPoint
+class AtomicActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {

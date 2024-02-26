@@ -1,11 +1,10 @@
-import extensions.implementDaggerHilt
-
 plugins {
     id("core-application")
+    alias(libs.plugins.ksp)
     id("compose")
+    id("dagger")
     id("unit-tests")
     id("logger")
-    alias(libs.plugins.ksp)
 }
 
 android {
@@ -13,7 +12,5 @@ android {
 }
 
 dependencies {
-    implementDaggerHilt() // Dagger-Hilt
-
     debugImplementation(libs.leak.canary)
 }

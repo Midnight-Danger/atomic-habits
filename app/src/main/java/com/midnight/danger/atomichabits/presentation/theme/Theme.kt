@@ -1,4 +1,4 @@
-package com.midnight.danger.atomichabits.ui.theme
+package com.midnight.danger.atomichabits.presentation.theme
 
 import android.app.Activity
 import android.os.Build
