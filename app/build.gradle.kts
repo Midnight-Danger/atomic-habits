@@ -1,3 +1,5 @@
+import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
+
 plugins {
     id(Plugins.Convention.Application)
     alias(libs.plugins.ksp)
@@ -13,4 +15,15 @@ android {
 
 dependencies {
     debugImplementation(libs.leak.canary)
+}
+
+ktlint {
+    android.set(true)
+    outputToConsole.set(true)
+    outputColorName.set("RED")
+    ignoreFailures.set(true)
+    reporters {
+        reporter(ReporterType.PLAIN)
+        reporter(ReporterType.CHECKSTYLE)
+    }
 }
