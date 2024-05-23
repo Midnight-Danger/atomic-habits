@@ -1,4 +1,8 @@
 root = true
 
 [*.{kt,kts}]
+ktlint_function_naming_ignore_when_annotated_with = Composable # ignore function naming for Composables
+ktlint_standard_multiline-expression-wrapping = disabled
+ktlint_standard_string-template-indent = disabled
+ktlint_standard_colon-spacing = disabled
 ktlint_standard_final-newline = disabled
