@@ -19,3 +19,5 @@ dependencyResolutionManagement {
 rootProject.name = "Atomic Habits"
 // App Module
 include(":app")
+// Base Modules
+include(":base-modules:core")

@@ -34,6 +34,10 @@ internal fun Project.vcBundle(alias: String): Provider<ExternalModuleDependencyB
     return versionCatalog().findBundle(alias).get()
 }
 
+internal fun DependencyHandlerScope.ksp(dependency: Any) {
+    add(DependencyConfigs.KSP, dependency)
+}
+
 internal fun DependencyHandlerScope.implementation(dependency: Any) {
     add(DependencyConfigs.IMPL, dependency)
 }

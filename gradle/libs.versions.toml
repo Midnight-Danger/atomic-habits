@@ -1,15 +1,18 @@
 [versions]
 ###### Plugin Versions ######
 kotlin = "1.9.21" #Kotlin version
-android-gradle = "8.2.2" #Gradle plugin version
+android-gradle = "8.3.2" #Gradle plugin version
 ksp = "1.9.21-1.0.16" #Kotlin Symbol Processor
+
+dagger-hilt = "2.50"
+dagger-hilt-compose = "1.2.0"
 
 ###### Library Versions ######
 compose-compiler = "1.5.7"
 core-ktx = "1.12.0" #android core
 desugar = "2.0.4"
 lifecycle-runtime-ktx = "2.7.0" #android lifecycle
-compose-bom = "2024.02.01"
+compose-bom = "2024.04.00"
 compose-activity = "1.8.2"
 
 leak-canary = "2.13"
@@ -23,6 +26,7 @@ androidTest-espresso = "3.5.1"
 application = { id = "com.android.application", version.ref = "android-gradle" }
 library = { id = "com.android.library" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "dagger-hilt" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
 [libraries]
@@ -41,6 +45,10 @@ compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview"
 compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
 compose-material3 = { module = "androidx.compose.material3:material3" }
 compose-activity = { module = "androidx.activity:activity-compose", version.ref = "compose-activity" }
+## dagger hilt
+dagger-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "dagger-hilt" }
+dagger-hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "dagger-hilt" }
+dagger-hilt-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "dagger-hilt-compose" }
 ## tooling
 leak-canary = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "leak-canary" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
@@ -56,6 +64,10 @@ compose = [
     "compose-ui-graphics",
     "compose-activity",
     "compose-material3"
+]
+dagger = [
+    "dagger-hilt-android",
+    "dagger-hilt-compose"
 ]
 # with debugImplementation
 compose-tooling = [

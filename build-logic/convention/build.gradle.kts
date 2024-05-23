@@ -25,6 +25,10 @@ gradlePlugin {
             id = "core-library"
             implementationClass = "plugins.LibraryConventionPlugin"
         }
+        register("daggerHilt") {
+            id = "dagger-hilt"
+            implementationClass = "plugins.DependencyInjectionConventionPlugin"
+        }
         register("composeCore"){
             id = "compose"
             implementationClass = "plugins.ComposeConventionPlugin"

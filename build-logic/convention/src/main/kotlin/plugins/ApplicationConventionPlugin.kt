@@ -1,5 +1,6 @@
 package plugins
 
+import constants.Plugins
 import constants.ProjectConfigs
 import extensions.applicationExtension
 import extensions.configureAndroidKotlin
@@ -12,8 +13,8 @@ class ApplicationConventionPlugin: Plugin<Project> {
         with(project) {
             // Apply Gradle & Kotlin plugins
             with(pluginManager) {
-                apply("com.android.application")
-                apply("org.jetbrains.kotlin.android")
+                apply(Plugins.AndroidGradlePlugin)
+                apply(Plugins.KotlinPlugin)
             }
 
             applicationExtension.apply {

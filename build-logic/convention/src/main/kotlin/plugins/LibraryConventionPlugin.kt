@@ -1,5 +1,6 @@
 package plugins
 
+import constants.Plugins
 import constants.ProjectConfigs
 import extensions.configureAndroidKotlin
 import extensions.libraryExtension
@@ -12,8 +13,8 @@ class LibraryConventionPlugin: Plugin<Project> {
         with(project) {
             // Apply Gradle & Kotlin plugins
             with(pluginManager) {
-                apply("com.android.library")
-                apply("org.jetbrains.kotlin.android")
+                apply(Plugins.AndroidLibrary)
+                apply(Plugins.KotlinPlugin)
             }
 
             libraryExtension.apply {
