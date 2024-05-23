@@ -1,3 +1,11 @@
+// Add these task exclusions for gradle tests that we shouldn't need during build execution
+gradle.startParameter.excludedTaskNames.addAll(
+    listOf(
+        ":buildSrc:testClasses",
+        ":build-logic:convention:testClasses"
+    )
+)
+
 pluginManagement {
     includeBuild("build-logic")
     repositories {
@@ -20,4 +28,4 @@ rootProject.name = "Atomic Habits"
 // App Module
 include(":app")
 // Base Modules
-include(":base-modules:core")
+//include(":base-modules:core")
