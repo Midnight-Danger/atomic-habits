@@ -1,6 +1,7 @@
 package extensions
 
 import com.android.build.api.dsl.CommonExtension
+import constants.Plugins
 import constants.ProjectConfigs
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
@@ -24,6 +25,10 @@ internal fun Project.configureAndroidKotlin(
             targetCompatibility = JavaVersion.VERSION_1_8
         }
         packaging.resources.excludes += "/META-INF/{AL2.0,LGPL2.1}"
+
+        with(pluginManager){
+            apply(Plugins.KtlintPlugin)
+        }
 
         dependencies {
             coreLibraryDesugaring(vcLibrary("desugar"))

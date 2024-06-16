@@ -1,0 +1,5 @@
+#!/bin/sh
+echo "......................Starting Ktlint check............................"
+echo "Formatting changes with linter rules"
+./gradlew ktlintFormat
+echo "Done..................................................................."

@@ -1,19 +1,20 @@
 [versions]
 ###### Plugin Versions ######
-kotlin = "1.9.21" #Kotlin version
-android-gradle = "8.3.2" #Gradle plugin version
-ksp = "1.9.21-1.0.16" #Kotlin Symbol Processor
+kotlin = "1.9.23" #Kotlin version
+ktlint = "12.1.1" #Ktlint version
+android-gradle = "8.4.1" #Gradle plugin version
+ksp = "1.9.23-1.0.20" #Kotlin Symbol Processor
 
 dagger-hilt = "2.50"
 dagger-hilt-compose = "1.2.0"
 
 ###### Library Versions ######
-compose-compiler = "1.5.7"
-core-ktx = "1.12.0" #android core
+compose-compiler = "1.5.13"
+core-ktx = "1.13.1" #android core
 desugar = "2.0.4"
-lifecycle-runtime-ktx = "2.7.0" #android lifecycle
-compose-bom = "2024.04.00"
-compose-activity = "1.8.2"
+lifecycle-runtime-ktx = "2.8.0" #android lifecycle
+compose-bom = "2024.05.00"
+compose-activity = "1.9.0"
 
 leak-canary = "2.13"
 timber = "5.0.1"
@@ -26,6 +27,7 @@ androidTest-espresso = "3.5.1"
 application = { id = "com.android.application", version.ref = "android-gradle" }
 library = { id = "com.android.library" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
 dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "dagger-hilt" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
