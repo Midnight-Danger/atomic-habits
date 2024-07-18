@@ -1,0 +1,108 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/*
+**/.idea/*
+!.idea/fileTemplates/
+
+/build
+
+# Additional
+Gemfile.lock
+android/*.jks
+android/jks/*.jks
+android/keystore.properties
+drafts/
+logs/
+
+#Android git ignore
+**/**/atomic-Android/build/
+local.properties
+.kotlin
+.gradle
+build/
+**/**/atomic-Android/build
+**/**/atomic-Android/captures
+**/**/atomic-Android/.externalNativeBuild
+**/**/atomic-Android/report.xml
+settings/reports
+lint/intermediates/
+lint/generated/
+lint/outputs/
+lint/tmp/
+
+
+#Common gitignore
+shared/build
+
+#iOS git ignore
+*.perspectivev3
+!default.perspectivev3
+## Other
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+.DS_Store
+## Obj-C/Swift specific
+**/**/atomic-iOS/Pods
+**/**/atomic-iOS/*.app.dSYM.zip
+**/**/atomic-iOS/*.ipa
+**/**/atomic-iOS/*.xcuserdata
+**/**/atomic-iOS/*.xcworkspace/contents.xcworkspacedata
+**/**/atomic-iOS/*DerivedData/
+**/**/atomic-iOS/*.moved-aside
+**/**/atomic-iOS/*.xccheckout
+**/**/atomic-iOS/*.xcscmblueprint
+**/**/atomic-iOS/.DS_Store
+**/**/atomic-iOS/Podfile.lock
+**/**/atomic-iOS/atomic-iOS/LocalizeFile/R.generated.swift
+**/**/atomic-iOS/**/xcuserdata/*.*
+**/**/atomic-iOS/*.xcworkspace/contents.xcworkspacedata/
+**/**/atomic-iOS/atomic-iOS.xcworkspace/xcshareddata
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+# Swift Package Manager
+#
+# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
+# Packages/
+# Package.pins
+# Package.resolved
+.build/
+# CocoaPods
+#
+# We recommend against adding the Pods directory to your .gitignore. However
+# you should judge for yourself, the pros and cons are mentioned at:
+# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
+#
+# **/**/atomic-iOS/Pods/
+/.DS_Store
+# Carthage
+#
+# Add this line if you want to avoid checking in source code from Carthage dependencies.
+# Carthage/Checkouts
+**/**/atomic-iOS/Carthage/Build
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/#source-control
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+*.
