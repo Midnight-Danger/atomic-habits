@@ -40,7 +40,7 @@ internal fun Project.configureKotlinMultiplatform(
 
             commonTest.dependencies {
                 // KMP test dependencies here
-                vcLibrary("kotlin-test")
+                implementation(vcLibrary("kotlin-test"))
             }
 
             androidMain.dependencies {
