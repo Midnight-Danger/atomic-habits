@@ -14,6 +14,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Atomic_Habits"
+rootProject.name = "Atomic-Habits"
 include(":atomic-Android")
 include(":shared")

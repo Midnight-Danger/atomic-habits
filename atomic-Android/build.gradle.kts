@@ -8,7 +8,7 @@ android {
     namespace = "com.daily.atomic.habits.android"
     compileSdk = 34
     defaultConfig {
-        applicationId = "com.daily.atomic.habits.android"
+        applicationId = "com.daily.atomic.habits"
         minSdk = 29
         targetSdk = 34
         versionCode = 1
