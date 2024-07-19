@@ -1,13 +1,22 @@
 [versions]
 agp = "8.5.1"
 kotlin = "2.0.0"
+
+## Library Versions
+core-ktx = "1.13.1" #android core
 compose = "1.6.8"
 compose-material3 = "1.2.1"
+desugar = "2.0.4"
+lifecycle-runtime-ktx = "2.8.3"
 androidx-activityCompose = "1.9.0"
 
 [libraries]
 kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
+desugar = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar" }
+
+android-core = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
+lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
 
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
