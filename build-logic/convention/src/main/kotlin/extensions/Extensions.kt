@@ -12,12 +12,16 @@ import org.gradle.api.artifacts.VersionConstraint
 import org.gradle.api.provider.Provider
 import org.gradle.kotlin.dsl.DependencyHandlerScope
 import org.gradle.kotlin.dsl.getByType
+import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
 internal val Project.applicationExtension: ApplicationExtension
     get() = extensions.getByType<ApplicationExtension>()
 
 internal val Project.libraryExtension: LibraryExtension
     get() = extensions.getByType<LibraryExtension>()
+
+internal val Project.kmpExtension: KotlinMultiplatformExtension
+    get() = extensions.getByType<KotlinMultiplatformExtension>()
 
 internal val Project.androidExtension
     get() = project.extensions.getByName(DependencyConfig.ANDROID) as? BaseExtension

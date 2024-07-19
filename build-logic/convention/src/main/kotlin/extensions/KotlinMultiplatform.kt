@@ -1,6 +1,7 @@
 package extensions
 
 import org.gradle.api.Project
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
 internal fun Project.configureKotlinMultiplatform(
@@ -10,10 +11,25 @@ internal fun Project.configureKotlinMultiplatform(
         jvmToolchain(17)
 
         //targets
-        androidTarget()
-        iosArm64()
-        iosX64()
-        iosSimulatorArm64()
+        androidTarget().apply {
+            compilations.all {
+                compileTaskProvider.configure {
+                    compilerOptions {
+                        jvmTarget.set(JvmTarget.JVM_17)
+                    }
+                }
+            }
+        }
+        listOf(
+            iosX64(),
+            iosArm64(),
+            iosSimulatorArm64()
+        ).forEach {
+            it.binaries.framework {
+                baseName = "shared"
+                isStatic = true
+            }
+        }
 
         applyDefaultHierarchyTemplate()
 
@@ -24,14 +40,23 @@ internal fun Project.configureKotlinMultiplatform(
 
             commonTest.dependencies {
                 // KMP test dependencies here
+                vcLibrary("kotlin-test")
             }
 
             androidMain.dependencies {
                 // Android dependencies here
             }
 
+            androidNativeTest.dependencies {
+                // Android test dependencies here
+            }
+
             iosMain.dependencies {
                 // iOS dependencies here
+            }
+
+            iosTest.dependencies {
+                // iOS test dependencies here
             }
         }
     }
