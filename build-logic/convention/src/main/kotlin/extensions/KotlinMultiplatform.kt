@@ -3,6 +3,7 @@ package extensions
 import org.gradle.api.Project
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
+import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
 
 internal fun Project.configureKotlinMultiplatform(
     extension: KotlinMultiplatformExtension,
@@ -10,7 +11,7 @@ internal fun Project.configureKotlinMultiplatform(
     with(extension) {
         jvmToolchain(17)
 
-        //targets
+        //android targets
         androidTarget().apply {
             compilations.all {
                 compileTaskProvider.configure {
@@ -20,13 +21,21 @@ internal fun Project.configureKotlinMultiplatform(
                 }
             }
         }
+
+        // iOS Targets
+        val xcFrameworkName = "shared"
+        val xcf = XCFramework(xcFrameworkName)
         listOf(
             iosX64(),
             iosArm64(),
             iosSimulatorArm64()
         ).forEach {
             it.binaries.framework {
-                baseName = "shared"
+                baseName = xcFrameworkName
+
+                // Specify CFBundleIdentifier to uniquely identify the framework
+                binaryOption("bundleId", "com.daily.atomic.habits.${xcFrameworkName}")
+                xcf.add(this)
                 isStatic = true
             }
         }
