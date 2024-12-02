@@ -23,7 +23,7 @@ internal fun Project.configureKotlinMultiplatform(
         }
 
         // iOS Targets
-        val xcFrameworkName = "shared"
+        val xcFrameworkName = "Shared"
         val xcf = XCFramework(xcFrameworkName)
         listOf(
             iosX64(),
