@@ -1,13 +1,13 @@
 [versions]
-agp = "8.5.1"
-kotlin = "2.0.0"
+agp = "8.5.2"
+kotlin = "2.0.21"
 
 ## Library Versions
-core-ktx = "1.13.1" #android core
-compose-bom = "2024.06.00"
-compose-activity = "1.9.0"
-desugar = "2.0.4"
-lifecycle-runtime-ktx = "2.8.3"
+core-ktx = "1.15.0" #android core
+compose-bom = "2024.11.00"
+compose-activity = "1.9.3"
+desugar = "2.1.3"
+lifecycle-runtime-ktx = "2.8.7"
 
 [libraries]
 kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
